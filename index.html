@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help to Aziza</title>
+</head>
+<body>
+    <div id="root">
+        <h1>Расписание еды на сегодня</h1>
+        <div class="shedule">
+            <div class="breakfast ">
+                <label for="breakfast">Завтрак:</label>
+                <p id="breakfast"></p>
+            </div>
+            <div class="lunch">
+                <label for="lunch">Обед:</label>
+                <p id="lunch"></p>
+            </div>
+            <div class="dinner">
+                <label for="dinner">Ужин:</label>
+                <p id="dinner"></p>
+            </div>
+            <div class="dessert">
+                <label for="dinner">На десерт:</label>
+                <p id="dessert"></p>
+            </div>
+        </div>
+    </div>
+    <style>
+        #root {
+            
+            text-align: center;
+            font-size: 20px;
+        }
+        .shedule {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .shedule div {
+            border: 1px solid blue;
+            border-radius: 8px;
+            padding: 60px;
+        }
+        @media screen and (max-width:767px) {
+            #root {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+
+            }
+            h1 {
+                font-size: 24px;
+            }
+            .shedule div {
+                padding: 35px;
+                margin: 10px 0;
+            }
+            .shedule {
+                display: flex;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <script>
+        var breakfast = ["Манная каша","Твороженная запеканка","Сырники", "Геркулес", "Рисовая каша", "Жаренные яйца", "Варенные яйца", "Омлет","Жаренная картошка","Гренки","Оладьи", "Нондамдам","Куймок", "Картошкамалхам","Блинчик с творогом", "Творог со сметаной", "Хлеб с маслом"];
+        var lunch = ["Картошка с сыром","Пюре с котлетой","Картошка фри","Мастова", "Вермишель", "Макарон-палов", "Шула", "Гречка-палов", "Гарнир с подливом", "Жаренннае яйца с помидором", "Пицца","Борщ", "Лагман", "Грибной суп", "Сырный Суп", "Хрущевский суп","Бургер"];
+        var dinner = ["Лазанья","Шашлык","Отбивное мясо","Резашурбо","Щи","Куринный бульон","Хомшурбо","Рагу","Жаренная курочка","Плов", "Манту", "Хонум", "Пельмени", "Картошка и мясо", "Мошгурунч", "Шуламошак", "Дамлама", "Макароны по флотски", "Столичный салат (Оливье - вместо колбасы отварная курица)","Салат овощной", "Курица с ананасом"];
+        var dessert =["Шарлотка", "Мороженное", "Пироженное", "Пряники", "Компот","Круасаны"]
+        
+        var foodBreakfast = Math.floor(Math.random() * breakfast.length);
+        var foodLunch = Math.floor(Math.random() * lunch.length);
+        var foodDinner = Math.floor(Math.random() * dinner.length);
+        var foodDessert = Math.floor(Math.random() * dessert.length);
+
+        var toMorning = breakfast[foodBreakfast];
+        var toLuch = lunch[foodLunch];
+        var toDinner = dinner[foodDinner];
+        var toDessert = dessert[foodDessert];
+        
+        document.getElementById('breakfast').innerHTML = toMorning;
+        document.getElementById('lunch').innerHTML = toLuch;
+        document.getElementById('dinner').innerHTML = toDinner;
+        document.getElementById('dessert').innerHTML = toDessert;
+    </script>
+</body>
+</html>
